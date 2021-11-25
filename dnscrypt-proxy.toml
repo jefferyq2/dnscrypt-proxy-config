@@ -8,14 +8,15 @@ ipv4_servers = true
 ipv6_servers = false
 dnscrypt_servers = true
 doh_servers = true
+odoh_servers = false
 require_dnssec = false
 require_nolog = true
 require_nofilter = true
 disabled_server_names = []
-force_tcp = true
+force_tcp = false
 # proxy = "socks5://127.0.0.1:9050"
 # http_proxy = "http://127.0.0.1:8888"
-timeout = 2500
+timeout = 5000
 keepalive = 30
 refused_code_in_responses = false
 lb_strategy = 'p2'
@@ -28,39 +29,46 @@ dnscrypt_ephemeral_keys = false
 tls_disable_session_tickets = false
 tls_cipher_suite = [52392, 49199]
 fallback_resolver = '9.9.9.9:53'
-ignore_system_dns = false
+bootstrap_resolvers = ['9.9.9.9:53', '8.8.8.8:53']
+ignore_system_dns = true
 netprobe_timeout = 60
-netprobe_address = "9.9.9.9:53"
+netprobe_address = '9.9.9.9:53'
 # offline_mode = false
 log_files_max_size = 10
 log_files_max_age = 7
 log_files_max_backups = 1
-
 #########################
 #        Filters        #
 #########################
-block_ipv6 = true
-
+block_ipv6 = false
+block_unqualified = true
+block_undelegated = true
+reject_ttl = 10
 ##################################################################################
 #        Route queries for specific domains to a dedicated set of servers        #
 ##################################################################################
 forwarding_rules = 'dnscrypt-forwarding-rules.txt'
-
 ###############################
 #        Cloaking rules       #
 ###############################
 # cloaking_rules = 'dnscrypt-cloaking-rules.txt'
-
 ###########################
 #        DNS cache        #
 ###########################
 cache = true
-cache_size = 512
-cache_min_ttl = 600
+cache_size = 4096
+cache_min_ttl = 2400
 cache_max_ttl = 86400
 cache_neg_min_ttl = 60
 cache_neg_max_ttl = 600
-
+########################################
+#        Captive portal handling       #
+########################################
+[captive_portals]
+##################################
+#        Local DoH server        #
+##################################
+[local_doh]
 ###############################
 #        Query logging        #
 ###############################
@@ -68,41 +76,81 @@ cache_neg_max_ttl = 600
   file = 'dnscrypt-query.log'
   format = 'tsv'
   # ignored_qtypes = ['DNSKEY', 'NS']
-
 ############################################
 #        Suspicious queries logging        #
 ############################################
 [nx_log]
   file = 'dnscrypt-nxdomain.log'
   format = 'tsv'
-
 ######################################################
-#        Pattern-based blocking (blacklists)         #
+#        Pattern-based blocking (blocklists)         #
 ######################################################
-[blacklist]
-  blacklist_file = 'dnscrypt-blacklist-domains.txt'
+[blocked_names]
+  blocked_names_file = 'dnscrypt-blacklist-domains.txt'
   log_file = 'dnscrypt-blacklist-domains.log'
   log_format = 'tsv'
-
 ###########################################################
-#        Pattern-based IP blocking (IP blacklists)        #
+#        Pattern-based IP blocking (IP blocklists)        #
 ###########################################################
-[ip_blacklist]
-  blacklist_file = 'dnscrypt-blacklist-ips.txt'
+[blocked_ips]
+  blocked_ips_file = 'dnscrypt-blacklist-ips.txt'
   log_file = 'dnscrypt-blacklist-ips.log'
   log_format = 'tsv'
-
 ######################################################
-#   Pattern-based whitelisting (blacklists bypass)   #
+#   Pattern-based allow lists (blocklists bypass)    #
 ######################################################
-[whitelist]
-  whitelist_file = 'dnscrypt-whitelist.txt'
-  log_file = 'dnscrypt-whitelisted.log'
+[allowed_names]
+  allowed_names_file = 'dnscrypt-whitelist-domains.txt'
+  log_file = 'dnscrypt-whitelisted-domains.log'
   log_format = 'tsv'
-
+#########################################################
+#   Pattern-based allowed IPs lists (blocklists bypass) #
+#########################################################
+[allowed_ips]
+  allowed_ips_file = 'dnscrypt-whitelist-ips.txt'
+  log_file = 'dnscrypt-whitelisted-ips.log'
+  log_format = 'tsv'
+##########################################
+#        Time access restrictions        #
+##########################################
+[schedules]
 #########################
 #        Servers        #
 #########################
+[sources]
+  [sources.'public-resolvers']
+    urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/public-resolvers.md', 'https://download.dnscrypt.net/resolvers-list/v3/public-resolvers.md']
+    cache_file = 'public-resolvers.md'
+    minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+    refresh_delay = 72
+    prefix = ''
+  [sources.'relays']
+    urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/relays.md', 'https://download.dnscrypt.info/resolvers-list/v3/relays.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/relays.md', 'https://download.dnscrypt.net/resolvers-list/v3/relays.md']
+    cache_file = 'relays.md'
+    minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+    refresh_delay = 72
+    prefix = ''
+#########################################
+#        Servers with known bugs        #
+#########################################
+[broken_implementations]
+fragments_blocked = ['cisco', 'cisco-ipv6', 'cisco-familyshield', 'cisco-familyshield-ipv6', 'cleanbrowsing-adult', 'cleanbrowsing-adult-ipv6', 'cleanbrowsing-family', 'cleanbrowsing-family-ipv6', 'cleanbrowsing-security', 'cleanbrowsing-security-ipv6']
+#################################################################
+#        Certificate-based client authentication for DoH        #
+#################################################################
+[doh_client_x509_auth]
+################################
+#        Anonymized DNS        #
+################################
+[anonymized_dns]
+skip_incompatible = false
+###############################
+#            DNS64            #
+###############################
+[dns64]
+########################################
+#            Static entries            #
+########################################
 [static]
   [static.'cisco']
   stamp = 'sdns://AQAAAAAAAAAADjIwOC42Ny4yMjAuMjIwILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ'
