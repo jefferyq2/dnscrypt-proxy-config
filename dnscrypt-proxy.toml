@@ -1,6 +1,7 @@
 ##################################
 #         Global settings        #
 ##################################
+# server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare']
 listen_addresses = ['0.0.0.0:53']
 max_clients = 250
 # user_name = 'nobody'
@@ -14,26 +15,28 @@ require_nolog = true
 require_nofilter = true
 disabled_server_names = []
 force_tcp = false
-# proxy = "socks5://127.0.0.1:9050"
-# http_proxy = "http://127.0.0.1:8888"
+# proxy = 'socks5://127.0.0.1:9050'
+# http_proxy = 'http://127.0.0.1:8888'
 timeout = 5000
 keepalive = 30
-refused_code_in_responses = false
-lb_strategy = 'p2'
-lb_estimator = true
-log_level = 0
-log_file = 'dnscrypt-proxy.log'
-use_syslog = false
+# edns_client_subnet = ['0.0.0.0/0', '2001:db8::/32']
+# blocked_query_response = 'refused'
+# lb_strategy = 'p2'
+# lb_estimator = true
+# log_level = 2
+# log_file = 'dnscrypt-proxy.log'
+# log_file_latest = true
+# use_syslog = true
 cert_refresh_delay = 240
-dnscrypt_ephemeral_keys = false
-tls_disable_session_tickets = false
-tls_cipher_suite = [52392, 49199]
-fallback_resolver = '9.9.9.9:53'
+# dnscrypt_ephemeral_keys = false
+# tls_disable_session_tickets = false
+# tls_cipher_suite = [52392, 49199]
 bootstrap_resolvers = ['9.9.9.9:53', '8.8.8.8:53']
 ignore_system_dns = true
 netprobe_timeout = 60
 netprobe_address = '9.9.9.9:53'
 # offline_mode = false
+# query_meta = ['key1:value1', 'key2:value2', 'token:MySecretToken']
 log_files_max_size = 10
 log_files_max_age = 7
 log_files_max_backups = 1
@@ -52,6 +55,7 @@ forwarding_rules = 'dnscrypt-forwarding-rules.txt'
 #        Cloaking rules       #
 ###############################
 # cloaking_rules = 'dnscrypt-cloaking-rules.txt'
+# cloak_ttl = 600
 ###########################
 #        DNS cache        #
 ###########################
@@ -65,10 +69,15 @@ cache_neg_max_ttl = 600
 #        Captive portal handling       #
 ########################################
 [captive_portals]
+# map_file = 'example-captive-portals.txt'
 ##################################
 #        Local DoH server        #
 ##################################
 [local_doh]
+# listen_addresses = ['127.0.0.1:3000']
+# path = '/dns-query'
+# cert_file = 'localhost.pem'
+# cert_key_file = 'localhost.pem'
 ###############################
 #        Query logging        #
 ###############################
@@ -114,6 +123,20 @@ cache_neg_max_ttl = 600
 #        Time access restrictions        #
 ##########################################
 [schedules]
+  # [schedules.'time-to-sleep']
+  # mon = [{after='21:00', before='7:00'}]
+  # tue = [{after='21:00', before='7:00'}]
+  # wed = [{after='21:00', before='7:00'}]
+  # thu = [{after='21:00', before='7:00'}]
+  # fri = [{after='23:00', before='7:00'}]
+  # sat = [{after='23:00', before='7:00'}]
+  # sun = [{after='21:00', before='7:00'}]
+  # [schedules.'work']
+  # mon = [{after='9:00', before='18:00'}]
+  # tue = [{after='9:00', before='18:00'}]
+  # wed = [{after='9:00', before='18:00'}]
+  # thu = [{after='9:00', before='18:00'}]
+  # fri = [{after='9:00', before='17:00'}]
 #########################
 #        Servers        #
 #########################
@@ -130,6 +153,27 @@ cache_neg_max_ttl = 600
     minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
     refresh_delay = 72
     prefix = ''
+  # [sources.'odoh-servers']
+  #   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-servers.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh-servers.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/odoh-servers.md', 'https://download.dnscrypt.net/resolvers-list/v3/odoh-servers.md']
+  #   cache_file = 'odoh-servers.md'
+  #   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+  #   refresh_delay = 24
+  #   prefix = ''
+  # [sources.'odoh-relays']
+  #   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-relays.md', 'https://download.dnscrypt.info/resolvers-list/v3/odoh-relays.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/odoh-relays.md', 'https://download.dnscrypt.net/resolvers-list/v3/odoh-relays.md']
+  #   cache_file = 'odoh-relays.md'
+  #   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+  #   refresh_delay = 24
+  #   prefix = ''
+  # [sources.quad9-resolvers]
+  #   urls = ['https://www.quad9.net/quad9-resolvers.md']
+  #   minisign_key = 'RWQBphd2+f6eiAqBsvDZEBXBGHQBJfeG6G+wJPPKxCZMoEQYpmoysKUN'
+  #   cache_file = 'quad9-resolvers.md'
+  #   prefix = 'quad9-'
+  # [sources.'parental-control']
+  #   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/parental-control.md', 'https://download.dnscrypt.info/resolvers-list/v3/parental-control.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/parental-control.md', 'https://download.dnscrypt.net/resolvers-list/v3/parental-control.md']
+  #   cache_file = 'parental-control.md'
+  #   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
 #########################################
 #        Servers with known bugs        #
 #########################################
@@ -139,22 +183,40 @@ fragments_blocked = ['cisco', 'cisco-ipv6', 'cisco-familyshield', 'cisco-familys
 #        Certificate-based client authentication for DoH        #
 #################################################################
 [doh_client_x509_auth]
+# creds = [
+#    { server_name='*', client_cert='client.crt', client_key='client.key' }
+# ]
 ################################
 #        Anonymized DNS        #
 ################################
 [anonymized_dns]
+# routes = [
+#    { server_name='example-server-1', via=['anon-example-1', 'anon-example-2'] },
+#    { server_name='example-server-2', via=['sdns://gRIxMzcuNzQuMjIzLjIzNDo0NDM'] }
+# ]
 skip_incompatible = false
+# direct_cert_fallback = false
 ###############################
 #            DNS64            #
 ###############################
 [dns64]
+# prefix = ['64:ff9b::/96']
+# resolver = ['[2606:4700:4700::64]:53', '[2001:4860:4860::64]:53']
 ########################################
 #            Static entries            #
 ########################################
 [static]
+  # [static.'myserver']
+  # stamp = 'sdns://AQcAAAAAAAAAAAAQMi5kbnNjcnlwdC1jZXJ0Lg'
   [static.'cisco']
-  stamp = 'sdns://AQAAAAAAAAAADjIwOC42Ny4yMjAuMjIwILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ'
-  [static.'cloudflare']
-  stamp = 'sdns://AgcAAAAAAAAABzEuMC4wLjGgENk8mGSlIfMGXMOlIlCcKvq7AVgcrZxtjon911-ep0cg63Ul-I8NlFj4GplQGb_TTLiczclX57DvMV8Q-JdjgRgSZG5zLmNsb3VkZmxhcmUuY29tCi9kbnMtcXVlcnk'
-#  [static.'google']
-#  stamp = 'sdns://AgUAAAAAAAAAAKAe9iTP_15r07rd8_3b_epWVGfjdymdx-5mdRZvMAzBuSB2gCRHoBmTGj8AQwTFP9xsGyw3jcS-j3Ozn9nJad-0RQ5kbnMuZ29vZ2xlLmNvbQ0vZXhwZXJpbWVudGFs'
+  stamp = 'sdns://AQEAAAAAAAAADjIwOC42Ny4yMjAuMjIwILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ'
+  [static.'cisco-doh']
+  stamp = 'sdns://AgAAAAAAAAAADDE0Ni4xMTIuNDEuMiBoU4_HgY6B0kIqkGBjb6UoKkP2Dc4bumDC1_Orq2YAlw9kb2gub3BlbmRucy5jb20KL2Rucy1xdWVyeQ'
+  [static.'cisco-familyshield']
+  stamp = 'sdns://AQEAAAAAAAAADjIwOC42Ny4yMjAuMTIzILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ'
+  [static.'cisco-ipv6']
+  stamp = 'sdns://AQEAAAAAAAAAD1syNjIwOjA6Y2NjOjoyXSC3NRFAIG8iXT4r2CLX_WkeocM8yNZmjQy-BL-rykP7eRsyLmRuc2NyeXB0LWNlcnQub3BlbmRucy5jb20'
+  [static.'cisco-ipv6-doh']
+  stamp = 'sdns://AgAAAAAAAAAAEFsyNjIwOjExOTpmYzo6Ml0gaFOPx4GOgdJCKpBgY2-lKCpD9g3OG7pgwtfzq6tmAJcPZG9oLm9wZW5kbnMuY29tCi9kbnMtcXVlcnk'
+  [static.'cisco-ipv6-familyshield']
+  stamp = 'sdns://AQEAAAAAAAAAEVsyNjIwOjExOTozNTo6MzVdILc1EUAgbyJdPivYItf9aR6hwzzI1maNDL4Ev6vKQ_t5GzIuZG5zY3J5cHQtY2VydC5vcGVuZG5zLmNvbQ'
