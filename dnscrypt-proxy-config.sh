@@ -33,6 +33,12 @@ cat dnscrypt-proxy-cloaking.txt >>dnscrypt-cloaking-rules.txt
 rm accelerated-domains.china.conf bogus-nxdomain.china.conf toblock-without-shorturl-optimized.lst dnscrypt-proxy-cloaking.txt
 
 wget -N https://raw.githubusercontent.com/jedisct1/dnscrypt-proxy/master/dnscrypt-proxy/example-dnscrypt-proxy.toml
+wget -N https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-relays.md
+wget -N https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-servers.md
+wget -N https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/parental-control.md
+wget -N https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md
+wget -N https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/relays.md
+wget -N https://www.quad9.net/quad9-resolvers.md
 
 git add .
 git commit -m "`date`"
