@@ -69,7 +69,7 @@ cache_neg_max_ttl = 600
 #        Captive portal handling       #
 ########################################
 [captive_portals]
-# map_file = 'example-captive-portals.txt'
+# map_file = 'dnscrypt-captive-portals.txt'
 ##################################
 #        Local DoH server        #
 ##################################
