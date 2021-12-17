@@ -56,6 +56,7 @@ forwarding_rules = 'dnscrypt-forwarding-rules.txt'
 ###############################
 # cloaking_rules = 'dnscrypt-cloaking-rules.txt'
 # cloak_ttl = 600
+# cloak_ptr = false
 ###########################
 #        DNS cache        #
 ###########################
@@ -95,7 +96,7 @@ cache_neg_max_ttl = 600
 #        Pattern-based blocking (blocklists)         #
 ######################################################
 [blocked_names]
-  blocked_names_file = 'dnscrypt-blacklist-domains.txt'
+  # blocked_names_file = 'dnscrypt-blacklist-domains.txt'
   log_file = 'dnscrypt-blacklist-domains.log'
   log_format = 'tsv'
 ###########################################################
