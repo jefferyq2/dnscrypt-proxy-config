@@ -37,6 +37,22 @@ Public non-censoring, non-logging, DNSSEC-capable, DNSCrypt-enabled DNS resolver
 sdns://AQcAAAAAAAAAFlsyMDAxOmJjODoxODI0OjczODo6MV0gAyfzz5J-mV9G-yOB4Hwcdk7yX12EQs5Iva7kV3oGtlEgMi5kbnNjcnlwdC1jZXJ0LmFjc2Fjc2FyLWFtcy5jb20
 
 
+## adfree.usableprivacy.net
+
+Public updns DoH service with advertising, tracker and malware filters.
+Hosted in Europe by @usableprivacy, details see: https://docs.usableprivacy.com
+
+sdns://AgMAAAAAAAAADTc4LjQ3LjE2My4xNDEgRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984YYWRmcmVlLnVzYWJsZXByaXZhY3kubmV0Ci9kbnMtcXVlcnk
+
+
+## adfree.usableprivacy.net-ipv6
+
+Public updns DoH service with advertising, tracker and malware filters.
+Hosted in Europe by @usableprivacy, details see: https://docs.usableprivacy.com
+
+sdns://AgMAAAAAAAAAFlsyYTAxOjRmODoxYzBjOjgzMmQ6Ol0gRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984YYWRmcmVlLnVzYWJsZXByaXZhY3kubmV0Ci9kbnMtcXVlcnk
+
+
 ## adguard-dns
 
 Remove ads and protect your computer from malware
@@ -1106,6 +1122,13 @@ DNSSEC/Non-logged/Uncensored in Sydney (AWS).
 Encrypted DNS Server image by jedisct1, maintaned by DeffeR.
 
 sdns://AQcAAAAAAAAADTUyLjY1LjIzNS4xMjkg5Q00RDDBkwx3fUaa0_etjz4iH3lLBOqsg95bYDmV07MdMi5kbnNjcnlwdC1jZXJ0LmRlZmZlci1kbnMuYXU
+
+
+## dns.b33.network-dnscrypt
+
+DNSCrypt | IPv4 only | Non-logging | Non-filtering | DNSSEC | Blocks ads, malware, trackers, viruses, ransomware, telemetry and more | hosted on OVH | Location: Paris, France | Maintained by 0xb33 - (https://github.com/0xb33)
+
+sdns://AQcAAAAAAAAAEjE2Mi4xOS4xMjkuMjA6NTQ0MyBLAxD2I-nLlzrjDQhX_eNLqCb-_DIIEiH7MBG2gbliLRsyLmRuc2NyeXB0LWNlcnQuYjMzLm5ldHdvcms
 
 
 ## dns.digitale-gesellschaft.ch
