@@ -283,25 +283,11 @@ AT&T test DoH server.
 sdns://AgQAAAAAAAAAAKBLTrSwdCmLgotcADCVoQtFI_uVHAyINIsJxT5bq6QIoyD2Hldod9qWUClMzLX5bHX8txvaG7xGRjZ8Tr7aidcxjxBkb2h0cmlhbC5hdHQubmV0Ci9kbnMtcXVlcnk
 
 
-## bcn-ads-doh
-
-Resolver in Spain. DoH protocol. Non-logging, remove ads and malware, DNSSEC.
-
-sdns://AgMAAAAAAAAADjE4NS4yNTMuMTU0LjY2ABhkbnNlcy1ub2Fkcy5hbGVrYmVyZy5uZXQKL2Rucy1xdWVyeQ
-
-
 ## bcn-dnscrypt
 
 Resolver in Spain. DNSCrypt protocol. Non-logging, non-filtering, DNSSEC.
 
 sdns://AQcAAAAAAAAADjE4NS4yNTMuMTU0LjY2IOAW_iKdfcd9ay9ewR8txQSwT-LP2bcoxGHv4wxTyGtNHDIuZG5zY3J5cHQtY2VydC5iY24tZG5zY3J5cHQ
-
-
-## bcn-doh
-
-Resolver in Spain. DoH protocol. Non-logging, non-filtering, DNSSEC.
-
-sdns://AgcAAAAAAAAADjE4NS4yNTMuMTU0LjY2oMwQYNOcgym2K2-8fQ1t-TCYabmB5-Y5LVzY-kCPTYDmIEROvWe7g_iAezkh6TiskXi4gr1QqtsRIx8ETPXwjffOEmRuc2VzLmFsZWtiZXJnLm5ldAovZG5zLXF1ZXJ5
 
 
 ## bortzmeyer
@@ -1439,7 +1425,7 @@ sdns://AQMAAAAAAAAALVsyMDAxOjE5ZjA6NDQwMDo0ZGUyOjU0MDA6M2ZmOmZlYTk6ZDQxOF06MjA1M
 
 Hosted in Singapore. For more information look [here](https://github.com/bhanupratapys/dnswarden) or [here](https://dnswarden.com).
 
-sdns://AgMAAAAAAAAAACCUatENG1QLfgjhzgopuDy_zcpf4bCem4u7DleuxzCFaRZkb2guYXNpYS5kbnN3YXJkZW4uY29tCC9hZGJsb2Nr
+sdns://AgMAAAAAAAAAACBETr1nu4P4gHs5Iek4rJF4uIK9UKrbESMfBEz18I33zhZkb2guYXNpYS5kbnN3YXJkZW4uY29tCC9hZGJsb2Nr
 
 
 ## dnswarden-asia-adultfilter-dcv4
@@ -2201,7 +2187,7 @@ Public DNS resolver for Families in Indonesia - https://puredns.org/family/
 Blocks malware, adware, gambling, fakenews, and adult sites. Google, Bing,
 and YouTube are set to Safe mode.
 
-sdns://AgcAAAAAAAAADTEwOC4xMzcuNDQuMzOgzBBg05yDKbYrb7x9DW35MJhpuYHn5jktXNj6QI9NgOYgRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZmFtaWx5LnB1cmVkbnMub3JnCi9kbnMtcXVlcnk
+sdns://AgcAAAAAAAAADTE0Ni4xOTAuNi4xNDCgzBBg05yDKbYrb7x9DW35MJhpuYHn5jktXNj6QI9NgOYgRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZmFtaWx5LnB1cmVkbnMub3JnCi9kbnMtcXVlcnk
 
 
 ## puredns-family-doh-ipv6
@@ -2210,7 +2196,7 @@ Public DNS resolver for Families in Indonesia - https://puredns.org/family/
 Blocks malware, adware, gambling, fakenews, and adult sites. Google, Bing,
 and YouTube are set to Safe mode.
 
-sdns://AgcAAAAAAAAAKFsyNDA2OmRhMTk6NjZmOmU4MTA6NjNmYzo0MTczOjFjMDg6YTAwZF2gzBBg05yDKbYrb7x9DW35MJhpuYHn5jktXNj6QI9NgOYgRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZmFtaWx5LnB1cmVkbnMub3JnCi9kbnMtcXVlcnk
+sdns://AgcAAAAAAAAAG1syNDAwOjYxODA6MDpkMDo6MTZhMjpkMDAxXaDMEGDTnIMptitvvH0NbfkwmGm5gefmOS1c2PpAj02A5iBETr1nu4P4gHs5Iek4rJF4uIK9UKrbESMfBEz18I33zhJmYW1pbHkucHVyZWRucy5vcmcKL2Rucy1xdWVyeQ
 
 
 ## pwoss.org-dnscrypt
@@ -2434,13 +2420,6 @@ sdns://AQcAAAAAAAAAFDExOC4yNy4xMDguMTQwOjUwNDQzIJ6mPj1aeYrSINYeUzVU2n9JMTUgalCmD
 Hosted on ConoHa VPS Tokyo region. No log. No filter.
 
 sdns://AQcAAAAAAAAAFTEzMy4xMzAuMTE4LjEwMzo1MDQ0MyCo72atOPI72UkQcaypJBmUUd1btQTwm1VRxHLioOo19SIyLmRuc2NyeXB0LWNlcnQuc2FsZG5zMDIudHlwZXEub3Jn
-
-
-## saldnssg01-conoha-ipv4
-
-Hosted on ConoHa VPS Singapore region. No log. No filter.
-
-sdns://AQcAAAAAAAAAFDE2My40NC4xNTQuMTQ0OjUwNDQzIGri6V6DYmNp01gdIzQyrACcU7_tbcUKEN8-P4B5NATAJTIuZG5zY3J5cHQtY2VydC5zYWxkbnMtc2cwMS50eXBlcS5vcmc
 
 
 ## scaleway-ams
