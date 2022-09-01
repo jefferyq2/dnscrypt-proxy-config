@@ -131,13 +131,6 @@ US - Miami, FL Anonymized DNS relay server provided by https://cryptostorm.is/
 sdns://gQwyMy4xOS4xMTcuNTU
 
 
-## anon-cs-fl2
-
-US - Miami, FL Anonymized DNS relay server provided by https://cryptostorm.is/
-
-sdns://gQwyMy4xOS4xMTcuNTE
-
-
 ## anon-cs-fr
 
 France Anonymized DNS relay server provided by https://cryptostorm.is/
@@ -417,13 +410,6 @@ sdns://gQ4xMzcuNzQuMjIzLjIzNA
 Anonymized DNS relay hosted by MegaNerd.nl (IPv4) (https://www.meganerd.nl/encrypted-dns-server) in Amsterdam, The Netherlands (AMS1)
 
 sdns://gRIxMzYuMjQ0Ljk3LjExNDo0NDM
-
-
-## anon-meganerd-ipv6
-
-Anonymized DNS relay hosted by MegaNerd.nl (IPv6) (https://www.meganerd.nl/encrypted-dns-server) in Amsterdam, The Netherlands (AMS1)
-
-sdns://gStbMjAwMToxOWYwOjUwMDE6Y2JiOjU0MDA6M2ZmOmZlMDc6ZjcwZF06NDQz
 
 
 ## anon-pwoss.org
