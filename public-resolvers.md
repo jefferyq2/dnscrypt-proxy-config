@@ -23,20 +23,6 @@ To use that list, add this to the `[sources]` section of your
 --
 
 
-## acsacsar-ams-ipv4
-
-Public non-censoring, non-logging, DNSSEC-capable, DNSCrypt-enabled DNS resolver hosted on Scaleway by @acsacsar (twitter)
-
-sdns://AQcAAAAAAAAADTUxLjE1OC4xNjYuOTcgAyfzz5J-mV9G-yOB4Hwcdk7yX12EQs5Iva7kV3oGtlEgMi5kbnNjcnlwdC1jZXJ0LmFjc2Fjc2FyLWFtcy5jb20
-
-
-## acsacsar-ams-ipv6
-
-Public non-censoring, non-logging, DNSSEC-capable, DNSCrypt-enabled DNS resolver hosted on Scaleway by @acsacsar (twitter)
-
-sdns://AQcAAAAAAAAAFlsyMDAxOmJjODoxODI0OjczODo6MV0gAyfzz5J-mV9G-yOB4Hwcdk7yX12EQs5Iva7kV3oGtlEgMi5kbnNjcnlwdC1jZXJ0LmFjc2Fjc2FyLWFtcy5jb20
-
-
 ## adfree.usableprivacy.net
 
 Public updns DoH service with advertising, tracker and malware filters.
@@ -216,7 +202,7 @@ sdns://AgcAAAAAAAAAFVsyYTBjOmI5YzA6Zjo0NTFkOjoxXaDMEGDTnIMptitvvH0NbfkwmGm5gefmO
 
 AT&T test DoH server.
 
-sdns://AgUAAAAAAAAAACC8hFRehaL-5iAWO74cDW6sa3toE6vGROtou_hQdtyuYxBkb2h0cmlhbC5hdHQubmV0Ci9kbnMtcXVlcnk
+sdns://AgUAAAAAAAAAAKC8hFRehaL-5iAWO74cDW6sa3toE6vGROtou_hQdtyuYyCY49XlNq8pWM0vfxT3BO9KJ20l4zzWXy5l9eTycnwTMBBkb2h0cmlhbC5hdHQubmV0Ci9kbnMtcXVlcnk
 
 
 ## bortzmeyer
@@ -640,13 +626,6 @@ sdns://AQIAAAAAAAAADjM3LjEyMC4yMzUuMTg3IDEzcq1ZVjLCQWuHLwmPhRvduWUoTGy-mk8ZCWQw2
 Iceland DNSCrypt server provided by https://cryptostorm.is/
 
 sdns://AQIAAAAAAAAADTgyLjIyMS4xMjguNDQgMTNyrVlWMsJBa4cvCY-FG925ZShMbL6aTxkJZDDbqVoeMi5kbnNjcnlwdC1jZXJ0LmNyeXB0b3N0b3JtLmlz
-
-
-## cs-la
-
-US - Los Angeles, CA DNSCrypt server provided by https://cryptostorm.is/
-
-sdns://AQIAAAAAAAAADDIzLjE5LjY3LjExNiAxM3KtWVYywkFrhy8Jj4Ub3bllKExsvppPGQlkMNupWh4yLmRuc2NyeXB0LWNlcnQuY3J5cHRvc3Rvcm0uaXM
 
 
 ## cs-london
