@@ -1055,6 +1055,34 @@ https://dns.watch
 sdns://AQcAAAAAAAAAHFsyMDAxOjE2MDg6MTA6MjU6OjkyNDk6ZDY5Yl0gQE1aAN9i4CFE7AtIcZi5Shmv6OT0Z4B8pXaxHouU-bAjMi5kbnNjcnlwdC1jZXJ0LnJlc29sdmVyMi5kbnMud2F0Y2g
 
 
+## dns0
+
+A free, sovereign and GDPR-compliant recursive DNS resolver with a
+strong focus on security to protect the citizens and organizations of
+the European Union.
+
+Blocks new domains, dynamic DNS, parked domains, uncommon TLDs, etc.
+
+https://www.dns0.eu/
+
+sdns://AgMAAAAAAAAAACCaOjT3J965vKUQA9nOnDn48n3ZxSQpAcK6saROY1oCGQdkbnMwLmV1Ci9kbnMtcXVlcnk
+
+
+## dns0-kids
+
+A free, sovereign and GDPR-compliant recursive DNS resolver with a
+strong focus on security to protect the citizens and organizations of
+the European Union.
+
+This version blocks content not suitable for children.
+
+Also blocks new domains, dynamic DNS, parked domains, uncommon TLDs, etc.
+
+https://www.dns0.eu/
+
+sdns://AgMAAAAAAAAAACCaOjT3J965vKUQA9nOnDn48n3ZxSQpAcK6saROY1oCGQxraWRzLmRuczAuZXUKL2Rucy1xdWVyeQ
+
+
 ## dnscrypt-ch-blahdns-ipv4
 
 Blocks ad and Tracking, no Logging, DNSSEC, Hosted in Switzerland. By https://blahdns.com/
